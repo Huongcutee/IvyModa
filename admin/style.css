@@ -1,0 +1,353 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+header{
+    height: 100px;
+    width: 100vw;
+    border-bottom:1px solid #ccc ;
+    text-align: center;
+}
+.admin-content{
+    padding-top: 50px;
+    display: flex;
+}
+.admin-content-left{
+    background-color: #dddddddd;
+    width: 20%;
+    height: 100vh;
+    padding: 30px 0 0 12px;
+    
+}
+.admin-content-left > ul > li > a{
+    font-weight:bold ;
+}
+.admin-content-left ul li{
+    margin: 6px 0;
+}
+.admin-content-left ul ul{
+    margin-left: 30px;
+}
+.admin-content-right{
+    width: 80%;
+    padding: 0px 0 0 20px;
+}
+
+
+/* Cartegory add  */
+.admin-content-right-cartegory-add-head
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
+}
+.admin-content-right-cartegory-add-head input
+{
+    display: block;
+    height: 40px;
+    width: 80px;
+    margin-top: 10px;
+    border-radius: 16px 0px;
+    margin-left: 220px; 
+    background-color: #000 ;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    font-weight: 700;
+    transition: 0.15s ease-in-out;
+}
+.admin-content-right-cartegory-add-head input:hover
+{
+    background-color: #fff;
+    border: 1px solid #000;
+    color: #000;
+}
+.admin-content-right-cartegory-add input{
+    height: 50px;
+    width: 300px;
+    padding-left: 12px;
+    margin-top: 20px;
+    border: 1px solid #dddddddd;
+    font-size: 16px;
+}
+.admin-content-right-cartegory-add button{
+    display: block;
+    height: 40px;
+    width: 80px;
+    margin-top: 10px;
+    border-radius: 16px 0px;
+    margin-left: 220px; 
+    background-color: #fff ;
+    border: 1px solid #000;
+    cursor: pointer;
+    font-weight: bold;
+    font-weight: 700;
+    transition: 0.15s ease-in-out;
+}
+.admin-content-right-cartegory-add button:hover{
+    background-color: #000;
+    border: 1px solid transparent;
+    color: #fff;
+}
+/* Order list  */
+.admin-content-right-cartegory-list-head{
+    justify-content: space-between;
+}
+/* ------------------------------- CARTEGORY LIST ------------------------------- */
+.admin-content-right-cartegory-list table{
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+}
+.admin-content-right-cartegory-list table th{
+    border: 1px solid #ccc;
+    padding: 20px 0;    
+}
+.admin-content-right-cartegory-list table td{
+    border: 1px solid #ccc;
+    padding: 16px 0;    
+}
+.admin-content-right-cartegory-list table tr{
+    margin: 20px 0;
+}
+table {
+    border-collapse: collapse;
+}
+.admin-content-right-cartegory-list table a:first-child{
+    margin-right: 5px;
+   padding: 8px 10px ;
+   background-color: #fff;
+   color: #000000;
+   border-radius:16px 0px ;
+   box-shadow: 0px 1px 1px 1px;
+}
+.admin-content-right-cartegory-list table a:first-child:hover{
+   background-color: #000;
+   color: #fff;
+   transition: 0.15s ease-in-out;
+}
+.admin-content-right-cartegory-list table a:last-child{
+    margin-left: 5px;
+   padding: 8px 10px ;
+   background-color: #000;
+   color: #fff;
+   border-radius:16px 0px;
+   border:1px solid #092635;
+   box-shadow: 0px 1px 1px 1px;
+}
+.admin-content-right-cartegory-list table a:last-child:hover{
+   background-color: #fff;
+   color: #000;
+   transition: 0.15s ease-in-out;
+}
+/* Brand add  */
+.admin-content-right-brand-add form select{
+    margin-top: 20px;
+    display: block;
+    height: 50px;
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 10px 10px;
+    font-size: 15px;
+    box-shadow: 0px 1px 1px 1px rgb(0,0,0, 0.2);
+}
+.admin-content-right-brand-add form select option{
+   background-color: #fff;
+   font-size: 15px;
+   color: #45474B;
+}
+.admin-content-right-brand-add input{
+    height: 50px;
+    width: 300px;
+    padding-left: 12px;
+    margin-top: 20px;
+    border: 1px solid #dddddddd;
+    font-size: 16px;
+}
+.admin-content-right-brand-add button{
+    display: block;
+    height: 40px;
+    width: 80px;
+    margin-top: 10px;
+    border-radius: 16px 0px;
+    margin-left: 220px; 
+    background-color: #fff ;
+    border: 1px solid #000;
+    cursor: pointer;
+    font-weight: bold;
+    font-weight: 700;
+    transition: 0.15s ease-in-out;
+}
+.admin-content-right-brand-add button:hover{
+    background-color: #000;
+    border: 1px solid transparent;
+    color: #fff;
+}
+/* Product add  */
+.admin-content-right-product-add h1{
+margin-bottom: 20px;
+}
+.admin-content-right-product-add-content{
+display: flex;
+margin: 10px 0px;
+}
+.admin-content-right-product-add input{
+    height: 50px;
+    width: 300px;
+    padding: 15px 20px;
+    border: 1px solid #dddddddd;
+    font-size: 16px;
+}
+.admin-content-right-product-add form select{
+    margin-top: 20px;
+    display: block;
+    height: 50px;
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 10px 10px;
+    font-size: 15px;
+    box-shadow: 0px 1px 1px 1px rgb(0,0,0, 0.2);
+}
+.admin-content-right-product-add button{
+    display: block;
+    height: 40px;
+    width: 80px;
+    margin-top: 10px;
+    border-radius: 16px 0px;
+    margin-left: 220px; 
+    background-color: #fff ;
+    border: 1px solid #000;
+    cursor: pointer;
+    font-weight: bold;
+    font-weight: 700;
+    transition: 0.15s ease-in-out;
+}
+.admin-content-right-product-add button:hover{
+    background-color: #000;
+    border: 1px solid transparent;
+    color: #fff;
+}
+.admin-content-right-product-add-conten-textarea{
+    font-size: 16px;
+    width: 700px;
+    resize: none;
+}
+.ck-rounded-corners .ck.ck-editor__editable:not(.ck-editor__nested-editable), .ck.ck-editor__editable.ck-rounded-corners:not(.ck-editor__nested-editable)
+{
+    height: 400px;
+}
+#blah{
+    display: none;
+    width: 300px ;
+    height: auto;
+    margin-top: 20px;
+}
+/* Order */
+.admin-content-right-orderdetail{
+    width: 100%;
+    margin-top: 10px;
+}
+.admin-content-right-orderdetail table {
+    width: 100%;
+}
+.admin-content-right-orderdetail table tr th{
+    height: 40px;
+    text-align: center;
+    border: 1px solid #45474B;
+    border-collapse: collapse;
+    font-size: 18px;
+} 
+.admin-content-right-orderdetail table tr th:nth-child(2){
+    text-align: unset;
+    padding-left: 20px;
+    font-size: 16px;
+    font-weight: 400;
+} 
+
+/* admin-content-right-cartegory-add-car  */
+.admin-content-right-cartegory-add-cart table{
+    width: 100%;
+}
+.admin-content-right-cartegory-add-cart table tr th{
+    border: 1px solid #333333;
+    height: 30px;
+}
+.admin-content-right-input a{
+  background-color: #fff;
+  width: 60px;
+  height: 40px;
+  border-radius: 16px 0px;
+  color: #221f20;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  font-weight: 600;
+  right: 10px;
+  padding: 10px 15px;
+  margin: 2px 2px;
+  border: 2px solid #432a2a;
+
+}
+.admin-content-right-input a:hover{
+  background-color: #221f20;
+  color: #fff;
+  transition: 0.15s ease-in-out;
+  border: 1px solid transparent;
+}
+.admin-content-right-input a:last-child{
+  width: 60px;
+  height: 40px;
+  border-radius: 16px 0px;
+  border: 1px solid transparent;
+  color: #fff;
+  background-color: #221f20;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  font-weight: 600;
+  right: 10px;
+  padding: 10px 15px;
+  margin: 2px 4px;
+}
+.admin-content-right-input a:last-child:hover{
+  background-color: #fff;
+  color: #221f20;
+  transition: 0.15s ease-in-out;
+  border: 2px solid #432a2a;
+}
+/*  */
+.admin-content-right-input {
+    display: flex;
+}
+/* View OrederDetailEdit  */
+.admin-content-right-content{
+    width: 40%;
+    margin-left: 40px;
+}
+.admin-content-right-content-input{
+    display: flex;
+    margin: 10px 0px;
+    align-items: center;
+    justify-content: space-between;
+}
+.admin-content-right-content-input label{
+    font-size: 18px;
+    color:#221f20 ;
+    font-weight: bold;
+}
+.admin-content-right-content-input input{
+    height: 50px;
+    width: 300px;
+    padding: 15px 20px;
+    border: 1px solid #dddddddd;
+    font-size: 16px;
+}
