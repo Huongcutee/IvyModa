@@ -88,7 +88,7 @@ include "class/brand_class.php";
               
                 <a   
                 <?php
-                if ($_SESSION['gio_hang'] == null || !isset($_SESSION['gio_hang']) )
+                if ($_SESSION['gio_hang'] == [] || !isset($_SESSION['gio_hang']) )
                 {
                 ?>
                     href=""

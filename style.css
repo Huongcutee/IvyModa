@@ -306,17 +306,17 @@ color: rgba(0,0,0,0.7);
 .cartegory-right{
   width: 100%;
 }
-.cartegory-right-top-item:first-child{
+.cartegory-right-top-select:first-child{
   flex: 2;
   font-size: 16px;
   font-weight: bold;
   margin-top: 10px;
 }
-.cartegory-right-top-item{
+.cartegory-right-top-select{
   flex: 1;
   padding: 0 12px;
 }
-.cartegory-right-top-item button{
+.cartegory-right-top-select button{
   width: 100%;
   padding: 10px 15px;
   display: flex;
@@ -325,15 +325,41 @@ color: rgba(0,0,0,0.7);
   border: 1px solid #ddd;
   cursor: pointer;
 }
-.cartegory-right-top-item select{
-  width: 100%;
+.cartegory-right-top-select-item {
+  margin-top: 15px;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden; 
+  transform: translateY(-10px);  
+  transition: all 0.3s ease;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+.activeA {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); 
+}
+.i {
+  transition: transform 0.3s ease;  
+}
+.flip {
+   transform: rotate(180deg);
+}
+.cartegory-right-top-item-filter {
+  max-width: 282px;
   padding: 10px 15px;
   display: flex;
-  justify-content: space-between;
   background-color: #FFF;
-  border: 1px solid #ddd;
   cursor: pointer;
+  width:282px;
 }
+.cartegory-right-top-item-filter a:hover{
+  font-weight: bold;
+  transition: ease-in-out 0.1s;
+}
+
 .cartegory-right-content
 {
 margin-top: 20px;
@@ -690,7 +716,9 @@ border-bottom: 2px solid #221F20;
   display: none;
 }
 .activeB{
-  display: none;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); 
 }
 /* product related */
 
@@ -1077,7 +1105,14 @@ height: 40px;
   transition: 0.15s ease-in-out;
 }
 .delivery-left-ThongTinSanPham{
-  margin: 20px 0px 0px 0px;
+  margin-top: 15px;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden; 
+  transform: translateY(-10px);  
+  transition: all 0.3s ease;
+  border: 1px solid #ddd;
+  z-index: 1;
 }
 
 /* -------------------- Payment -------------------- */

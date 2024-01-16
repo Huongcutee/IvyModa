@@ -166,6 +166,31 @@ class product
         $result = $this->db->select($query);
         return $result;
     }
+    public function filter_product($brand_id,$filter)
+    {
+        if($filter == 1)
+        {
+            $query = "SELECT * FROM tbl_product where brand_id = '$brand_id'
+            order by product_sale desc";
+        }
+        if($filter == 2)
+        {
+            $query = "SELECT * FROM tbl_product where brand_id = '$brand_id'
+            order by product_sale asc";
+        }
+         if($filter == 3)
+        {
+            $query = "SELECT * FROM tbl_product where brand_id = '$brand_id'
+            order by product_name asc";
+        }
+         if($filter == 4)
+        {
+            $query = "SELECT * FROM tbl_product where brand_id = '$brand_id'
+            order by product_name desc";
+        }
+        $result = $this->db->select($query);
+        return $result;
+    }
      public function show_more_product_img_desc($product_id)
     {
         $query = "SELECT

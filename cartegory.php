@@ -10,10 +10,37 @@ $product = new product;
  }
  else{
     $brand_id = $_GET['brand_id'];
-    $list_product_ofbrand = $product -> show_product_ofbrand($brand_id);
+    // hien thi thong tin cua muc luc 
     $show_brand_cartegory = $product -> show_brand_id($brand_id);
     $resultt = $show_brand_cartegory -> fetch_array();
+
+    // duogn dan trang cartegory
+    $currentURL = 'http://localhost/ivyhtml/cartegory.php'.'?brand_id='.$brand_id;
+    if(!isset($_GET['filter']))
+    {
+        // hien thi san pham 
+        $show_product = $product -> show_product_ofbrand($brand_id);
+    }
+    else{
+        $filter = $_GET['filter'];
+        if($filter == 'CaoDenThap'){
+            $show_product = $product -> filter_product($brand_id,1);
+        }
+        if($filter == 'ThapDenCao')
+        {
+            $show_product = $product -> filter_product($brand_id,2);
+        }
+        if($filter == 'A_Z')
+        {
+            $show_product = $product -> filter_product($brand_id,3);
+        }
+        if($filter == 'Z_A')
+        {
+            $show_product = $product -> filter_product($brand_id,4);
+        }
+    }
 }
+    
 ?>
     <!--*****************Cartegory*****************-->
     <section class="cartegory">
@@ -41,23 +68,36 @@ $product = new product;
             <!--****************cartegory-right ****************-->
             <div class="cartegory-right">
                 <div class="row">
-                    <div class="cartegory-right-top-item">
+                    <div class="cartegory-right-top-select">
                         <p><b>HÀNG MỚI VỀ</b></p>
                     </div>
-                    <div class="cartegory-right-top-item">
+                    <div class="cartegory-right-top-select">
                         <button><span>Bộ lọc</span><i class="fa-solid fa-sort-down"></i></button>
                     </div>
-                    <div class="cartegory-right-top-item">
-                        <select name="" id="">
-                            <option value="">Sắp xếp</option>
-                            <option value="">Giá cao đến thấp</option>
-                            <option value="">Giá thấp đến cao</option>
-                        </select>
+                    <div class="cartegory-right-top-select">
+                        <button id="btn_sapxep"><span>Sắp xếp</span><i class="fa-solid fa-sort-down"></i></button>
+                            <div class="cartegory-right-top-select-item">
+                                <div class="cartegory-right-top-item-filter">
+                                    <a href="<?php echo $currentURL . '&filter=CaoDenThap'; ?>">Giá cao đến thấp</a>
+                                </div>
+                                <div class="cartegory-right-top-item-filter">
+                                    <a href="<?php echo $currentURL . '&filter=ThapDenCao'; ?>">Giá thấp đến cao</a>
+                                </div>
+                                <div class="cartegory-right-top-item-filter">
+                                    <a href="<?php echo $currentURL . '&filter=A_Z'; ?>">Từ A đến Z</a>
+                                </div>
+                                <div class="cartegory-right-top-item-filter">
+                                    <a href="<?php echo $currentURL . '&filter=Z_A'; ?>">Từ Z đến A</a>
+                                </div>
+                            </div>
                     </div>
+                   
+             
                 </div>
-                <div class="cartegory-right-content row ">
+                <div class="cartegory-right-content row">
                     <?php
-                    while( $result = $list_product_ofbrand -> fetch_assoc())
+                    $i =0;
+                    while($result = $show_product-> fetch_assoc())
                     {
                     ?>
                     <div class="cartegory-right-content-item">
@@ -114,6 +154,18 @@ $product = new product;
             menu.classList.toggle("block")
         })
     })
+      //click vao hien thi se hien thi
+    const show = document.querySelector("#btn_sapxep")
+    const icon = show.querySelector('i');
+    show.addEventListener("click", function () {
+        document.querySelector(".cartegory-right-top-select-item").classList.toggle("activeA");
+        icon.classList.toggle('flip');
+        setTimeout(() => {
+        // Sau 0.3 giây thì bỏ class xoay đi
+        icon.classList.remove('rotated');  
+  }, 300);
+    })
+    // sort 
 </script>
 
 </html>

@@ -6,6 +6,8 @@ include("class/product_class.php");
 <?php
 $product = new product;
 $show_product = $product->show_product();
+    
+
 ?>
 <section class="slide-title">
     <h1>
